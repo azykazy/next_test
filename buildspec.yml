@@ -4,9 +4,7 @@ phases:
   install:
     runtime-versions:
       nodejs: 18
-      docker: 20
     commands:
-      - n 18
       - node -v
       - npm -v
 
