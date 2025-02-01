@@ -14,4 +14,6 @@ phases:
     commands:
       - echo Pushing Docker image...
       - docker push $ECR_REPOSITORY:latest
+      - echo Updating ECS service...
+      - aws ecs update-service --cluster my-app-ecs-cluster --service my-app-service --force-new-deployment
       - echo Build completed successfully
