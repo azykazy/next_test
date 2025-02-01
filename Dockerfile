@@ -39,11 +39,11 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # 非root実行ユーザーに切り替え
-USER nextjs
+USER root
 
-EXPOSE 3000
+EXPOSE 80
 
-ENV PORT 3000
+ENV PORT 80
 ENV HOSTNAME "0.0.0.0"
 
 CMD ["node", "server.js"] 
